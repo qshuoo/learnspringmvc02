@@ -81,5 +81,11 @@ ModelAndView
 Map 及 Model
 @SessionAttributes
 @ModelAttribute
+
+`sringmvc在执行处理用户请求的方法之前会创建一个对象，这个对象用于存储数据，并且这个对象可以提供给处理请求的方法使用。`
+
+`如果方法的入参为 Map 或 Model 类型，Spring MVC 会将隐含模型的引用传递给这些入参。`
+
+`在方法体内，开发者可以通过这个入参对象访问到模型中的所有数据，也可以向模型中添加新的属性数据`
 				
 

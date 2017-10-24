@@ -13,6 +13,13 @@ success
 	<input type="text" name="name"/><br/>
 	<input type="submit"/>
 </form>
-
+<br/>
+${mView }
+${m1 }
+${m2 }
+${map }
+${model }
+${modelandview }
+${modelAttribute }
 </body>
 </html>
