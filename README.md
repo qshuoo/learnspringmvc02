@@ -43,7 +43,7 @@
 	</bean>
 
 ### 配置web.xml
-*	配置springmvc核心控制器
+配置springmvc核心控制器
 
 	<servlet>
 		<servlet-name>springDispatcherServlet</servlet-name>
