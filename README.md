@@ -57,8 +57,29 @@
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>springDispatcherServlet</servlet-name>
-		<url-pattern>/</url-pattern>
+		<url-pattern>*.do</url-pattern>
 	</servlet-mapping> 
+	
+`<url-pattern>/</url-pattern>中如果使用/会拦截静态资源访问不到，可以使用*.do`
 
+
+## 数据流入
+	
+*	springmvc数据流入	
+1使用HttpServletRequest获取	
+2@RequestParam注解	
+3通过入参处的参数		
+4@RequestHeader 	
+5@CookieValue 		
+6使用POJO（实体类）作为参数		
+7使用Servlet原生API作为参数		
+
+## 输出模型
+
+*	springmvc数据流出
+ModelAndView	
+Map 及 Model
+@SessionAttributes
+@ModelAttribute
 				
 
