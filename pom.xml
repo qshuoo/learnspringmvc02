@@ -4,18 +4,23 @@
 	<groupId>com.qshuoo</groupId>
 	<artifactId>learnspringmvc2</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	
+
 	<!-- 清除下载失败的jar包 -->
 	<!-- for /r %i in (*.lastUpdated) do del %i -->
-	
+
 
 	<dependencies>
-	
+
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-webmvc</artifactId>
 			<version>4.3.10.RELEASE</version>
 		</dependency>
 
+		<dependency>
+			<groupId>commons-fileupload</groupId>
+			<artifactId>commons-fileupload</artifactId>
+			<version>1.3.1</version>
+		</dependency>
 	</dependencies>
 </project>

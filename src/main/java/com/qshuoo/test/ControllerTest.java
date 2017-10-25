@@ -14,6 +14,12 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.qshuoo.pojo.User;
 
+/**
+ * 测试页面转发、重定向、数据流入、数据流出
+ * @author qshuoo
+ *
+ */
+
 @Controller
 
 //存放name对应的session

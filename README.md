@@ -66,21 +66,32 @@
 ## 数据流入
 	
 *	springmvc数据流入	
-1使用HttpServletRequest获取	
-2@RequestParam注解	
-3通过入参处的参数		
-4@RequestHeader 	
-5@CookieValue 		
-6使用POJO（实体类）作为参数		
-7使用Servlet原生API作为参数		
+
+	1使用HttpServletRequest获取	
+	
+	2@RequestParam注解	
+	
+	3通过入参处的参数		
+	
+	4@RequestHeader 	
+	
+	5@CookieValue 		
+	
+	6使用POJO（实体类）作为参数		
+	
+	7使用Servlet原生API作为参数		
 
 ## 输出模型
 
 *	springmvc数据流出
-ModelAndView	
-Map 及 Model
-@SessionAttributes
-@ModelAttribute
+
+	ModelAndView	
+
+	Map 及 Model
+
+	@SessionAttributes
+
+	@ModelAttribute
 
 `sringmvc在执行处理用户请求的方法之前会创建一个对象，这个对象用于存储数据，并且这个对象可以提供给处理请求的方法使用。`
 
@@ -88,4 +99,26 @@ Map 及 Model
 
 `在方法体内，开发者可以通过这个入参对象访问到模型中的所有数据，也可以向模型中添加新的属性数据`
 				
+
+## 文件上传
+
+Spring MVC 为文件上传提供了直接的支持，这种支持是通过即插即用的 MultipartResolver 实现的。          
+		
+Spring 用 Commons FileUpload 技术实现了一个 MultipartResolver 实现类：CommonsMultipartResovler     
+
+### 实现步骤
+1.	导包 （fileupload 和commons-io）
+2。	spring.xml中配置 MultipartResolver
+
+
+	<bean id="multipartResolver"
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<property name="defaultEncoding" value="UTF-8"></property>
+		<property name="maxUploadSize" value="1024000"></property>
+	</bean>
+	
+	
+3。	编写前端页面
+4。	编写控制器java代码
+
 
