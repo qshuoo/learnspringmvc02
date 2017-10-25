@@ -22,7 +22,7 @@
 
 ### 配置springmvc.xml
 
-	添加约束
+添加约束
 
 	<beans xmlns="http://www.springframework.org/schema/beans"
 		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mvc="http://www.springframework.org/schema/mvc"
@@ -31,11 +31,11 @@
 			http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 			http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.1.xsd">
 			
-	设置扫描组件的包
+设置扫描组件的包
 
 	<context:component-scan base-package="com.qshuoo.*"/>
 
-	配置映射解析路径
+配置映射解析路径
 
 	<bean id="internalResourceViewResolver"
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
@@ -68,19 +68,19 @@
 	
 *	springmvc数据流入	
 
-	1使用HttpServletRequest获取	
+	1	使用HttpServletRequest获取	
 	
-	2@RequestParam注解	
+	2	@RequestParam注解	
 	
-	3通过入参处的参数		
+	3	通过入参处的参数		
 	
-	4@RequestHeader 	
+	4	@RequestHeader 	
 	
-	5@CookieValue 		
+	5	@CookieValue 		
 	
-	6使用POJO（实体类）作为参数		
+	6	使用POJO（实体类）作为参数		
 	
-	7使用Servlet原生API作为参数		
+	7	使用Servlet原生API作为参数		
 
 ## 输出模型
 
@@ -108,9 +108,10 @@ Spring MVC 为文件上传提供了直接的支持，这种支持是通过即插
 Spring 用 Commons FileUpload 技术实现了一个 MultipartResolver 实现类：CommonsMultipartResovler     
 
 ### 实现步骤
-	导包 （fileupload 和commons-io）
 
-	spring.xml中配置 MultipartResolver
+导包 （fileupload 和commons-io）		
+
+spring.xml中配置 MultipartResolver		
 
 
 	<bean id="multipartResolver"
@@ -118,10 +119,16 @@ Spring 用 Commons FileUpload 技术实现了一个 MultipartResolver 实现类�
 		<property name="defaultEncoding" value="UTF-8"></property>
 		<property name="maxUploadSize" value="1024000"></property>
 	</bean>
-	
-	
-	编写前端页面
 
-	编写控制器java代码
+
+编写前端页面		
+
+编写控制器java代码	
+
+## 文件下载
+
+ResponseEntity 响应实体类，除了可以指定返回数据，还可以定义返回的HttpHeaders和HttpStatus。
+
+ResponseEntity是一个对响应数据，响应头，响应码进行封装的一个是实体类
 
 
