@@ -21,7 +21,8 @@
 	</dependency>
 
 ### 配置springmvc.xml
-1.	添加约束
+
+	添加约束
 
 	<beans xmlns="http://www.springframework.org/schema/beans"
 		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mvc="http://www.springframework.org/schema/mvc"
@@ -30,11 +31,11 @@
 			http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 			http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.1.xsd">
 			
-2.	设置扫描组件的包
+	设置扫描组件的包
 
 	<context:component-scan base-package="com.qshuoo.*"/>
-	
-3.	配置映射解析路径
+
+	配置映射解析路径
 
 	<bean id="internalResourceViewResolver"
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
@@ -107,8 +108,9 @@ Spring MVC 为文件上传提供了直接的支持，这种支持是通过即插
 Spring 用 Commons FileUpload 技术实现了一个 MultipartResolver 实现类：CommonsMultipartResovler     
 
 ### 实现步骤
-1.	导包 （fileupload 和commons-io）
-2。	spring.xml中配置 MultipartResolver
+	导包 （fileupload 和commons-io）
+
+	spring.xml中配置 MultipartResolver
 
 
 	<bean id="multipartResolver"
@@ -118,7 +120,8 @@ Spring 用 Commons FileUpload 技术实现了一个 MultipartResolver 实现类�
 	</bean>
 	
 	
-3。	编写前端页面
-4。	编写控制器java代码
+	编写前端页面
+
+	编写控制器java代码
 
 
