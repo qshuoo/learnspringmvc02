@@ -24,5 +24,17 @@
 		<property name="maxUploadSize" value="1024000"></property>
 	</bean>
 
+	<!-- 声明自定义拦截器 -->
+	<mvc:interceptors>
+		<!-- 拦截所有处理器 -->
+		<bean id="firstInterceptor" class="com.qshuoo.interceptor.FirstInterceptor"></bean>
+
+		<mvc:interceptor>
+			<mvc:mapping path="/**" />
+
+			<bean id="timeInterceptor" class="com.qshuoo.interceptor.TimeInterceptor"></bean>
+		</mvc:interceptor>
+	</mvc:interceptors>
+
 
 </beans>

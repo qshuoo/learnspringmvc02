@@ -16,6 +16,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class DownloadTest {
 
+	/**
+	 * 测试下载文件
+	 * @return
+	 */
 	@RequestMapping("/download01")
 	public ResponseEntity<byte[]> download01() {
 		//组装返回数据

@@ -131,4 +131,44 @@ ResponseEntity 响应实体类，除了可以指定返回数据，还可以定�
 
 ResponseEntity是一个对响应数据，响应头，响应码进行封装的一个是实体类
 
+## 拦截器
+
+类似于Servlet开发中的过滤器Filter，用于对处理器进行预处理和后处理。		
+
+用户可以自定义拦截器来实现特定的功能，自定义的拦截器必须实现HandlerInterceptor接口 		
+
+### 常见应用场景
+
+1。	日志记录：记录请求信息的日志，以便进行信息监控、信息统计、计算PV（Page View）等。
+2。	权限检查：如登录检测，进入处理器检测检测是否登录，如果没有直接返回到登录页面；
+3。	性能监控：有时候系统在某段时间莫名其妙的慢，可以通过拦截器在进入处理器之前记录开始时间，在处理完后记录结束时间，从而得到该请求的处理时间；(运维，测试)
+4。	通用行为：读取cookie得到用户信息并将用户对象放入请求，从而方便后续流程使用，还有如提取Locale、Theme信息等，只要是多个处理器都需要的即可使用拦截器实现。
+5。	OpenSessionInView：如Hibernate，在进入处理器打开Session，在完成后关闭Session。
+
+### 核心接口 HandlerInterceptor
+
+核心方法	
+1.	preHandle
+
+	实现预处理，返回值为true时，继续流程，调用下一个拦截器或处理器，false表示流程中断，使用response响应
+	
+2.	postHandle
+	
+	后处理回调，实现处理器的后处理，但在渲染视图之前
+	
+3.	afterCompletion
+
+	整个请求处理完毕回调，即视图渲染完毕之后，但仅调用处理器执行链中preHandle返回true的拦截器的afterCompletion
+	
+### 自定义拦截器实现步骤
+
+1，	自定义实现HandlerInterceptor接口
+2.	重写HandlerInterceptor接口方法
+3.	在springmvc.xml进行配置，配置拦截器拦截范围
+
+`HandlerInterceptor线程不安全，在某些需要线程安全的问题上，可以使用ThreadLocal对线程进行变量绑定`
+
+
+
+
 
